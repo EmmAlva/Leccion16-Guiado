@@ -1,6 +1,6 @@
 var element = document.querySelector(".form-in");
 element.addEventListener('submit',function(event){
-	event.preventDefauld();
+	event.preventDefault();
 	validateForm();
 });
 
@@ -24,57 +24,81 @@ function validateForm(){
 		span7 = document.getElementById("wrong7"),
 		span8 = document.getElementById("wrong8"),
 		span8 = document.getElementById("wrong9");
-
-	if(name.value == null){
+// NAME
+	if(name.value == ""){
 		span0.style.display = "block";
 		span0.innerHTML = "Completa el campo";
 		name.focus();
 		return false;
 	}
-	// else if(){
-	// 	span0.style.display = "block";
-	// 	span0.innerHTML = "Las primeras letras de tu nombre en mayúscula";
-	// }
+	else if(/([A-ZÑÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+/.test(name.value) == false){
+		span0.style.display = "block";
+		span0.innerHTML = "Las primeras letras de tu nombre en mayúscula";
+	}
 	else{
 		span0.style.display = "none";
 	}
-
-
-	span1.style.display = "block";
+// DNI
+	if(dni.value == ""){
+		span1.style.display = "block";
 		span1.innerHTML = "Completa el campo";
+		dni.focus();
+		return false;
+	}
 
-	span2.style.display = "block";
-		span2.innerHTML = "Completa el campo";
-		span2.innerHTML	=	"Oh!! Eres mayor de edad"
-
-
-	span3.style.display = "block";
-		span3.innerHTML = "Completa el campo";
-
-	span4.style.display = "block";
-		span4.innerHTML = "Completa el campo";
-
-	span5.style.display = "block";
-		span5.innerHTML = "Completa el campo";
-
-	span6.style.display = "block";
-		span6.innerHTML = "Escriba nuevamente su contraseña";
-
-	span7.style.display = "block";
-		span7.innerHTML = "Escriba su comentario";
-
-	span8.style.display = "block";
-		span8.innerHTML = "Acepta las condiciones?";
+	else if(/\w+/.test(dni.value) || dni.value.length > 8){
+		span1.style.display="block";
+		span1.innerHTML = "Solo 8 dígitos";
+		dni.focus();
+		return false;
+	}
+	else {
+		span1.style.display="none";
+		date.focus();
+	}
 
 
 
 
+	// else if(/\d{6,10}/.test(password1)){
+	// 	span1.style.display = "none";
+	// }
+
+// DATE
+	// if(date)
+	
+	// span2.style.display = "block";
+	// 	span2.innerHTML = "Completa el campo";
+	// 	span2.innerHTML	=	"Oh!! Eres mayor de edad"
+
+// CEL
+	// span3.style.display = "block";
+	// 	span3.innerHTML = "Completa el campo";
 
 
+// HOUSE
+	// span4.style.display = "block";
+	// 	span4.innerHTML = "Completa el campo";
+// PASSWORD1
+	// span5.style.display = "block";
+	// 	span5.innerHTML = "Completa el campo";
 
+// PASSWORD2
+	// span6.style.display = "block";
+	// 	span6.innerHTML = "Escriba nuevamente su contraseña";
+// COMENTARIO
+	// span7.style.display = "block";
+	// 	span7.innerHTML = "Escriba su comentario";
 
-
+	// span8.style.display = "block";
+	// 	span8.innerHTML = "Acepta las condiciones?";
 
 
 
 }
+
+// function setInputDate(){
+// 	date
+// 	var hoy = 
+
+// }
