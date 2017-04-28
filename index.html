@@ -32,17 +32,17 @@
 		</div>
 		<div class="homephone-container input-box">
 			<label for="">Teléfono fijo</label>
-			<input type="tel" id="house" class="style-input" pattern="\+[0-9]{2}\s[0-9]{3}\-[0-9]{4}" required="" autofocus="">
+			<input type="tel" id="house" class="style-input" pattern="\d{7}" required="" autofocus="">
 			<span class="style-error error" id="wrong4"></span>
 		</div>
 		<div class="password-container input-box"> 
 			<label for="">Contraseña</label>
-			<input type="password" id="password-input" class="style-input" pattern="" required="" autofocus="">
+			<input type="password" id="password-input" class="style-input" pattern="\w{2,10}" required="" autofocus="">
 			<span class="style-error error" id="wrong5"></span>
 		</div> 
 		<div class="password2-container input-box">
 			<label for="">Confirme su contraseña</label>  <!-- visible/invisible -->
-			<input type="password" type="password" id="password-input2" class="style-input" pattern="" required=" autofocus">
+			<input type="password" type="password" id="password-input2" class="style-input" pattern="\w{2,10}" required=" autofocus">
 			<span class="style-error error" id="wrong6"></span>
 		</div>
 		<div class="coment-container input-box">
@@ -53,7 +53,7 @@
 		<div class="chekit-container input-box">
 			<label for="">
 			<span>Terminos y Condiciones</span>
-			<input type="checkbox" value="life!!!" required="">
+			<input type="checkbox" value="life!!!" required="" title="Aceptas los terminos y condiciones?">
 			<span class="style-error error" id="wrong8"></span>
 			</label>			
 		</div>
